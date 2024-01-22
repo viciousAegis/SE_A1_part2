@@ -3,6 +3,13 @@ public class SurveillanceCamera {
     private String location; // location of the camera
     private String status; // status of the camera
 
+    // default
+    public SurveillanceCamera() {
+        this.cameraId = 0;
+        this.location = null;
+        this.status = null;
+    }
+
     // constructor
     public SurveillanceCamera(int cameraId, String location, String status) {
         this.cameraId = cameraId;

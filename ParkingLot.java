@@ -12,6 +12,18 @@ public class ParkingLot {
     private List<SurveillanceCamera> surveillanceCameras; // list of surveillance cameras
     private List<DataLog> dataLogs; // list of data logs
 
+    // default constructor
+    public ParkingLot() {
+        this.parkingLotId = 0;
+        this.dockingStations = null;
+        this.vehicles = null;
+        this.currentOccupancy = 0;
+        this.location = null;
+        this.capacity = 0;
+        this.surveillanceCameras = null;
+        this.dataLogs = null;
+    }
+
     // constructor
     public ParkingLot(int parkingLotId, List<DockingStation> dockingStations, List<SmartVehicle> vehicles,
             int currentOccupancy, String location, int capacity, List<SurveillanceCamera> surveillanceCameras,
