@@ -1,5 +1,7 @@
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Date;
+
 abstract class User {
     private String userID; // user ID
     private String name; // user name
@@ -36,6 +38,8 @@ abstract class User {
     // methods
     public Boolean useVehicle() {
         // use vehicle
+        SmartVehicle vehicle = scanQRCode();
+        Trip trip = startTrip(vehicle);
         return true;
     }
 
@@ -44,9 +48,16 @@ abstract class User {
         return new SmartVehicle();
     }
 
+    public Identification setIdentification(Identification identification) {
+        // set identification
+        this.identification = identification;
+        return this.identification;
+    }
+
     private Trip startTrip(SmartVehicle vehicle) {
         // start trip
-        return new Trip();
+        return new Trip(0 ,this, vehicle, new Date(), null, new PaymentScheme(), 0, "", "", 0, false, false,
+                new PaymentManager(), null);
     }
 
     public Boolean endTrip(SmartVehicle vehicle) {
@@ -56,10 +67,12 @@ abstract class User {
 
     public Boolean renewVehicle(SmartVehicle vehicle) {
         // renew vehicle
+        // allows vehicle to be used for another 8 hours
         return true;
     }
     public Boolean provideFeedback(double rating, String comment) {
         // provide feedback
+        Feedback feedback = new Feedback(rating, comment);
         return true;
     }
 }

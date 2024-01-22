@@ -1,4 +1,3 @@
-import java.util.*;
 
 public class PaymentManager {
     private boolean autoDeduction;
@@ -26,7 +25,7 @@ public class PaymentManager {
     public boolean makePaymentFromWallet(Wallet wallet, int amount) {
         // Implementation to make a payment from the wallet
         if (autoDeduction || checkWalletBalance(wallet, amount)) {
-            wallet.deductBalance(amount);
+            wallet.deductMoney(amount);
             return true;
         } else {
             // Insufficient balance
@@ -44,7 +43,7 @@ public class PaymentManager {
     public boolean addMoneyToWallet(Wallet wallet, int amount, PaymentType paymentType) {
         // Implementation to add money to the wallet
         // (You can replace this with your own logic)
-        wallet.addBalance(amount);
+        wallet.addMoney(amount);
         // Additional logic based on payment type, if needed
         return true;
     }

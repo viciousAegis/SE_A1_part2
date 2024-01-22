@@ -1,35 +1,42 @@
-// 
+// class Feedback {
+//     -rating: double
+//     -comment: String
+//     +setRating(double rating)
+//     +getRating(): double
+//     +setComment(String comment)
+//     +getComment(): String
+// }
 
 
 public class Feedback {
-    private int feedbackId; // feedback ID
-    private String feedbackTopic; // feedback topic
-    private String feedbackInformation; // feedback information
+    private double rating;
+    private String comment;
 
     public Feedback() {
-        this.feedbackId = 0;
-        this.feedbackTopic = "";
-        this.feedbackInformation = "";
+        this.rating = 0.0;
+        this.comment = "";
     }
 
-    // constructor
-    public Feedback(int feedbackId, String feedbackTopic, String feedbackInformation) {
-        this.feedbackId = feedbackId;
-        this.feedbackTopic = feedbackTopic;
-        this.feedbackInformation = feedbackInformation;
+    public Feedback(double rating, String comment) {
+        this.rating = rating;
+        this.comment = comment;
     }
 
-    // methods
-    public int getFeedbackId() {
-        return this.feedbackId;
+    public double getRating() {
+        return this.rating;
     }
 
-    public String getFeedbackTopic() {
-        return this.feedbackTopic;
+    public Boolean setRating(double rating) {
+        this.rating = rating;
+        return true;
     }
 
-    public String getFeedbackInformation() {
-        return this.feedbackInformation;
+    public String getComment() {
+        return this.comment;
     }
-    
+
+    public Boolean setComment(String comment) {
+        this.comment = comment;
+        return true;
+    }
 }

@@ -12,15 +12,21 @@ public class UPI {
         return upiId;
     }
 
+    public double getBalance() {
+        return 0.0;
+    }
+
     // Method to make a payment
     public boolean makePayment(int amount) {
         // Implementation specific to UPI payment logic
         // For simplicity, assume upi's balance is stored in balance
-        double balance;
+        double balance = getBalance();
 
-        if(balance >= amount) :
+        if(balance >= amount) {
             return true;
-        else    
+        }
+        else   {
             return false;
+        }
     }
 }

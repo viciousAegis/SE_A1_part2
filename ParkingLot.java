@@ -39,25 +39,25 @@ public class ParkingLot {
     }
 
     // functions
-    public SmartVehicle getVehicle(int vehicleId) {
+    public SmartVehicle getVehicle(String vehicleId) {
         for (SmartVehicle vehicle : vehicles) {
-            if (vehicle.vehicleId == vehicleId) {
+            if (vehicle.getVehicleID() == vehicleId) {
                 return vehicle;
             }
         }
         return null;
     }
 
-    public String getDockingStationMaintanenceStatus(int dockingStationId) {
+    public String getDockingStationMaintanenceStatus(String dockingStationId) {
         for (DockingStation dockingStation : dockingStations) {
-            if (dockingStation.dockingStationId == dockingStationId) {
-                return dockingStation.maintenanceStatus;
+            if (dockingStation.getDockingStationID() == dockingStationId) {
+                return dockingStation.getMaintenanceStatus();
             }
         }
         return null;
     }
 
-    public bool logData(string data) {
+    public Boolean logData(String data) {
         DataLog dataLog = new DataLog(data);
         dataLogs.add(dataLog);
         return true;

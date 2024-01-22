@@ -17,6 +17,16 @@ public class SmartVehicle {
     private TripHistory tripHistory;
 
     // Constructor
+    public SmartVehicle(){
+        this.vehicleID = "";
+        this.vehicleType = null;
+        this.location = "";
+        this.inUse = false;
+        this.rating = 0.0;
+        this.statusMessage = "";
+        this.tripHistory = null;
+    }
+
     public SmartVehicle(String vehicleID, VehicleType vehicleType, String location) {
         this.vehicleID = vehicleID;
         this.vehicleType = vehicleType;
@@ -27,22 +37,36 @@ public class SmartVehicle {
         this.tripHistory = null;
     }
 
+    public String getVehicleLocation(){
+        return this.location;
+    }
+
+    public String getVehicleID(){
+        return this.vehicleID;
+    }
+
     // Getter and Setter methods (assume they're created for those not mentioned)
-    setRating(double rating) {
+    public double getRating() {
+        return this.rating;
+    }
+
+    Boolean setRating(double rating) {
         this.rating = rating;
+        return true;
     }
 
     // Method to calculate the rating of the vehicle
-    public double calculateRating() {
+    public double calculateRating(Feedback feedback) {
         // Implementation to calculate the rating based on historical trip data
         // Average all the ratings from the trips taken until now and store it in ratings
-        double rating;
-        setRating(rating);
+        double rating = getRating();
+        double trip_rating = feedback.getRating();
+        // update rating based on weighted average by including trip_rating
+        return rating;
     }
 
     // Method to dock the vehicle at a docking station
     public boolean dockAtStation() {
-        // Implementation to dock the vehicle at a docking station
         // Implementation to dock the vehicle at a docking station
         // Update the vehicle's location and set the docking station
         this.location = dockingStation.getLocation();
