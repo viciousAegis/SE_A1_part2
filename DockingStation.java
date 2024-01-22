@@ -29,7 +29,6 @@ public class DockingStation {
             // Implementation to dock the vehicle at the docking station
             // Update the docking station's status and the vehicle's ID
             this.isOccupied = true;
-            this.vehicleID = Integer.parseInt(vehicle.getVehicleID()); // Assuming vehicleID is an integer
             return true;
         } else {
             // Docking station is already occupied
@@ -39,11 +38,10 @@ public class DockingStation {
 
     // Method to undock a vehicle from the docking station
     public boolean undockVehicle(SmartVehicle vehicle) {
-        if (isOccupied && vehicleID == Integer.parseInt(vehicle.getVehicleID())) {
+        if (isOccupied) {
             // Implementation to undock the vehicle from the docking station
             // Update the docking station's status and the vehicle's ID
             this.isOccupied = false;
-            this.vehicleID = 0; // Assuming 0 denotes no vehicle ID
             return true;
         } else {
             // Either the docking station is not occupied or the provided vehicle is not the one docked
