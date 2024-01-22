@@ -3,6 +3,13 @@ import java.util.*;
 public class PaymentManager {
     private boolean autoDeduction;
 
+    public enum PaymentType {
+        UPI,
+        WALLET,
+        CREDITCARD,
+        DEBITCARD
+    }
+
     // Constructor
     public PaymentManager() {
         this.autoDeduction = false;
